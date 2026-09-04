@@ -1,0 +1,262 @@
+/* Configuración General y Paleta de Colores
+   #282B59 - Azul Oscuro Principal
+   #42468C - Azul Intermedio
+   #777CD9 - Azul Claro
+   #B7AEF2 - Lavanda Acento
+   #F2E1D8 - Fondo Claro / Contraste
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F2E1D8;
+    color: #282B59;
+    line-height: 1.6;
+}
+
+/* Encabezado y Navegación */
+header {
+    background-color: #282B59;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #F2E1D8;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 4px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Animación en el Menú al Pasar el Mouse */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background-color: #B7AEF2;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover {
+    color: #B7AEF2;
+    transform: translateY(-2px);
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Estructura Principal */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #282B59;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    border-bottom: 3px solid #777CD9;
+    padding-bottom: 5px;
+}
+
+/* Slider de Imágenes (CSS Puro) */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    margin-bottom: 40px;
+}
+
+.slider-track {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    animation: sliderAnimation 12s infinite ease-in-out;
+}
+
+.slide {
+    width: 33.333%;
+    height: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(40, 43, 89, 0.85);
+    color: #F2E1D8;
+    width: 100%;
+    padding: 15px 20px;
+}
+
+@keyframes sliderAnimation {
+    0%, 28% { transform: translateX(0%); }
+    33%, 61% { transform: translateX(-33.333%); }
+    66%, 94% { transform: translateX(-66.666%); }
+    100% { transform: translateX(0%); }
+}
+
+/* Parrilla de Noticias (Diseño Profesional) */
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.noticia-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border-top: 4px solid #42468C;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.noticia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.noticia-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.noticia-contenido {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.noticia-categoria {
+    color: #777CD9;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.noticia-contenido h2 {
+    color: #282B59;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.noticia-contenido p {
+    color: #42468C;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.btn-leer {
+    align-self: flex-start;
+    background-color: #42468C;
+    color: #F2E1D8;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-leer:hover {
+    background-color: #777CD9;
+}
+
+/* Formulario de Contacto Estilizado */
+.formulario-contacto {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.campo-form {
+    margin-bottom: 20px;
+}
+
+.campo-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #282B59;
+}
+
+.campo-form input,
+.campo-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #777CD9;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.campo-form input:focus,
+.campo-form textarea:focus {
+    outline: none;
+    border-color: #282B59;
+    box-shadow: 0 0 5px #B7AEF2;
+}
+
+.btn-enviar {
+    background-color: #282B59;
+    color: #F2E1D8;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #777CD9;
+}
+
+/* Pie de Página */
+footer {
+    background-color: #282B59;
+    color: #F2E1D8;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
